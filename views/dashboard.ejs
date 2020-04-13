@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Acceuil</title>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+    
+</head>
+<body>
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-dark p-4">
+            <h4 class="text-white">Menu</h4>
+          </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+          <a href="/users/logout" class="btn btn-secondary btn-danger">Logout</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-3">
+          <div class="container-fluid" style="border: 6px solid blue ;height:500px; background-color: silver;">  
+            <a href="villes/ajout" ></a>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="container-fluid" style="border: 6px solid blue ;height:500px; background-color: silver;">  
+            <a href="villes/ajout" > ajouter une ville </a>
+          </div>
+        </div>
+      </div>
+    
+    
+<script>
+    var key= '93515786f4cf6ec70c357889f9b7e38e';
+    var nom= "paris"
+    var lien ='https://api.openweathermap.org/data/2.5/weather?q='+nom+"&units=metric&lang=fr&appid="+key;
+    var result
+    fetch(lien).then(
+    function(response){
+    response.json().then(function(donne){
+        meteo = donne
+        console.log(meteo)
+        })   
+    }) 
+</script>
+
+    
+</body>
+</html>
